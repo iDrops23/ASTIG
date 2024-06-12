@@ -23,7 +23,7 @@ async def generate(prompt):
         do_sample=True,
         seed=42,
     )
-    formatted_prompt = system_instructions + prompt + "[/INST]"
+    formatted_prompt = system_instructions + prompt + "[/INST]" #might remove "slash s"
     stream = client.text_generation(
         formatted_prompt, **generate_kwargs, stream=True, details=True, return_full_text=True)
     output = ""
